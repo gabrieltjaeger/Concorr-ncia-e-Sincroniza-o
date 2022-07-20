@@ -14,7 +14,7 @@ def main():
     threads = []
 
     for _ in range(NUMERO_DE_CONTAS):
-        banco.adiciona_conta(ContaCorrente())
+        banco.adiciona_conta(ContaCorrente(saldo = VALOR_MAXIMO_PARA_TRANSACOES))
 
     for _ in range(NUMERO_DE_THREADS):
         conta = banco[randrange(0, len(banco))] # seleciona uma conta aleató-
