@@ -1,9 +1,14 @@
+from .contaCorrente import ContaCorrente
+
 class Banco:
     def __init__(self):
         self.contas = []
 
     def adiciona_conta(self, conta):
+        if not isinstance(conta, ContaCorrente):
+            raise TypeError('Conta deve ser do tipo ContaCorrente')
         self.contas.append(conta)
+        return True
 
     def __repr__(self):
         return str(self.contas)
